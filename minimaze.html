@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function onClick() {
+            document.getElementById("minimize").classList.toggle("minimazed")
+        }
+    </script>
+    <style>
+        body,html {
+            display: flex;
+            margin: 0px;
+            padding: 0px;
+            height: 100vh;
+        }
+
+        .grow-0 {
+            flex-grow: 0;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+        }
+
+        .grow-1 {
+            flex-grow: 1;
+            padding: 10px;
+        }
+
+        .minimazed {
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grow-0" id="minimize">
+        Hello world
+    </div>
+
+    <div class="grow-1">
+        <button onclick="onClick()">Minimize</button>
+    </div>
+</body>
+</html>
