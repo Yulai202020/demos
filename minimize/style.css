@@ -1,6 +1,7 @@
 main {
     display: flex;
     height: 100vh;
+    padding-left: 0;
 }
 
 .grow-0 {
