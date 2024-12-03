@@ -1,3 +1,4 @@
-main {
+body>main {
     padding: 0;
+    padding-left: 0;
 }
