@@ -2,3 +2,8 @@ body>footer, body>header, body>main {
     padding-block: 0;
     padding-left: 3rem;
 }
+
+main {
+    display: flex;
+    align-content: center;
+}
