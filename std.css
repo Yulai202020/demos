@@ -6,3 +6,7 @@ body, html {
     padding: 0px;
     height: 100vh;
 }
+
+body>footer, body>header, body>main {
+    padding: 0px;
+}
