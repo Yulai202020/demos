@@ -19,6 +19,6 @@ main {
     width: 60px;
 }
 
-body>footer, body>header body>main {
+body>footer, body>header, body>main {
     padding: 0;
 }
