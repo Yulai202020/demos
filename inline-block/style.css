@@ -6,3 +6,8 @@ div {
     color: white;
     margin: 10px;
 }
+
+body>footer, body>header, body>main {
+    padding-block: 0;
+    padding-left: 3rem;
+}
