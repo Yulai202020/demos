@@ -1,0 +1,19 @@
+body {
+    display: flex;
+}
+
+.grow-0 {
+    flex-grow: 0;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+}
+
+.grow-1 {
+    flex-grow: 1;
+    padding: 10px;
+}
+
+.minimazed {
+    width: 60px;
+}
