@@ -1,4 +1,4 @@
 body>footer, body>header, body>main {
-    padding-inline: 0;
+    padding-block: 0;
     padding-left: 3rem;
 }
