@@ -1,6 +1,7 @@
 main {
     display: flex;
     height: 100vh;
+    padding-block: 0;
     padding-left: 0;
 }
 
@@ -20,7 +21,7 @@ main {
     width: 60px;
 }
 
-body>footer, body>header, body>main {
+body>footer, body>header {
     padding-block: 0;
     padding-left: 3rem;
 }
