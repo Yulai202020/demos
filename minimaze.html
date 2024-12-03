@@ -10,11 +10,8 @@
         }
     </script>
     <style>
-        body,html {
+        body {
             display: flex;
-            margin: 0px;
-            padding: 0px;
-            height: 100vh;
         }
 
         .grow-0 {
@@ -35,12 +32,16 @@
     </style>
 </head>
 <body>
-    <div class="grow-0" id="minimize">
-        Hello world
-    </div>
+    <header></header>
+    <main>
+        <div class="grow-0" id="minimize">
+            Hello world
+        </div>
 
-    <div class="grow-1">
-        <button onclick="onClick()">Minimize</button>
-    </div>
+        <div class="grow-1">
+            <button onclick="onClick()">Minimize</button>
+        </div>
+    </main>
+    <footer></footer>
 </body>
 </html>
