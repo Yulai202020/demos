@@ -3,7 +3,7 @@
 }
 
 .absolute {
-    position: absolute;
+    position: fixed;
     padding: 10px;
     top: 50%;
     right: 50%;
