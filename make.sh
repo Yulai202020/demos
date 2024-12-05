@@ -2,6 +2,10 @@ mkdir $1
 
 cd $1
 
+mkdir src
+
+mv * src
+
 bun init
 
 bun add -D stylelint
@@ -18,3 +22,9 @@ cat <<EOF > .stylelintrc.json
     }
 }
 EOF
+
+rm -fr index.ts README.md
+
+jq '.scripts += {"css:lint": "stylelint src/*.css", "css:fix": "stylelint src/*.css --fix"}' package.json > tmp.json
+mv tmp.json package.json
+rm -fr tmp.json
