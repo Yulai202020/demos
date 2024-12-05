@@ -4,9 +4,11 @@
 
 .absolute {
     position: fixed;
-    padding: 10px;
     top: 50%;
     right: 50%;
+
+    padding: 10px;
+
     border: 2px solid black;
     border-radius: 5px;
 }
@@ -16,7 +18,7 @@
 }
 
 .half-hide {
-    opacity: 50%;
+    opacity: 0.5;
 }
 
 body>footer, body>header, body>main {

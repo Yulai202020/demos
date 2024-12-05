@@ -6,8 +6,8 @@ main {
 .grow-0 {
     flex-grow: 0;
     padding: 10px;
-    background-color: blue;
     color: white;
+    background-color: blue;
 }
 
 .grow-1 {
