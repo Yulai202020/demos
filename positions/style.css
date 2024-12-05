@@ -4,9 +4,11 @@
 
 .absolute {
     position: absolute;
+    padding: 10px;
     top: 50%;
     right: 50%;
     border: 2px solid black;
+    border-radius: 5px;
 }
 
 .hide {
