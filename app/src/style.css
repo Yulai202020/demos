@@ -4,8 +4,8 @@ body {
 }
 
 .navbar {
-    background-color: black;
     color: white;
+    background-color: black;
 }
 
 .grow-7 {
@@ -17,14 +17,15 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    height: 100%;
     gap: 10px;
+
+    height: 100%;
 }
 
 .gird-element {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     background-color: green;
 }
 
@@ -40,6 +41,6 @@ main {
 }
 
 footer {
-    background-color: black;
     color: white;
+    background-color: black;
 }
