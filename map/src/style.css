@@ -1,0 +1,27 @@
+/* animations */
+
+@keyframes mordor {
+    100% {
+        top: 650px;
+        left: 1000px;
+    }
+}
+
+html,
+body {
+    height: 100vh;
+    background-image: url("https://tolkienists.ru/images/gallery/6/471004981.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.img {
+    position: absolute;
+    height: 100px;
+}
+
+/* use animations */
+
+#mordor {
+    animation: mordor 1s linear 1s 1 normal forwards;
+}
