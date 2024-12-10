@@ -1,14 +1,17 @@
 /* animations */
 
 @keyframes mans {
-    40% {
+    30% {
         top: 295px;
         left: 725px;
     }
-
-    60% {
+    40% {
         top: 400px;
         left: 700px;
+    }
+    80% {
+        top: 790px;
+        left: 1000px;
     }
     100% {
         top: 745px;
@@ -114,23 +117,23 @@ body {
 /* use animations */
 
 #mans {
-    animation: mans 13s linear 0s 1 normal forwards;
+    animation: mans 14s linear 0s 1 normal forwards;
 }
 
 #mordor {
-    animation: mordor 1s linear 1s 1 normal forwards, mordor_retreat 2s linear 6s 1 normal forwards, disapear 13s linear 1s 1 normal forwards;
+    animation: mordor 1s linear 6s 1 normal forwards, mordor_retreat 2s linear 12s 1 normal forwards, disapear 15s linear 1s 1 normal forwards;
 }
 
 #harad {
-    animation: harad 1s linear 1s 1 normal forwards, disapear 5s linear 1s 1 normal forwards;
+    animation: harad 1s linear 6s 1 normal forwards, disapear 11s linear 1s 1 normal forwards;
 }
 
 #umbar {
-    animation: umbar 1s linear 1s 1 normal forwards, disapear 5s linear 1s 1 normal forwards;
+    animation: umbar 1s linear 6s 1 normal forwards, disapear 11s linear 1s 1 normal forwards;
 }
 
 #isengard {
-    animation: isengard 1s linear 3s 1 normal forwards,  disapear 5s linear 1s 1 normal forwards;
+    animation: isengard 1s linear 3s 1 normal forwards, disapear 8s linear 1s 1 normal forwards;
 }
 
 #elfs {
@@ -138,5 +141,5 @@ body {
 }
 
 #gondor {
-    animation: gondor 2s linear 7s 1 normal forwards;
+    animation: gondor 2s linear 12s 1 normal forwards;
 }
