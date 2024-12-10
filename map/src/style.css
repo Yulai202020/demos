@@ -1,11 +1,90 @@
 /* animations */
 
-@keyframes mordor {
+@keyframes mans {
+    
+}
+
+@keyframes gondor {
+    60% {
+        top: 670px;
+        left: 970px;
+    }
+
+    80% {
+        top: 640px;
+        left: 1025px;
+    }
+
     100% {
         top: 650px;
-        left: 1000px;
+        left: 1025px;
     }
 }
+
+@keyframes mordor_retreat {
+    30% {
+        top: 770px;
+        left: 1045px;
+    }
+    100% {
+        top: 700px;
+        left: 1025px;
+    }
+}
+
+@keyframes mordor {
+    80% {
+        top: 780px;
+        left: 1020px;
+    }
+    100% {
+        top: 780px;
+        left: 1005px;
+    }
+}
+
+@keyframes harad {
+    40% {
+        top: 1070px;
+        left: 950px;
+    }
+    100% {
+        top: 835px;
+        left: 940px;
+    }
+}
+
+@keyframes umbar {
+    60% {
+        top: 1070px;
+        left: 950px;
+    }
+    100% {
+        top: 885px;
+        left: 940px;
+    }
+}
+
+@keyframes isengard {
+    100% {
+        top: 670px;
+        left: 620px;
+    }
+}
+
+@keyframes elfs {
+    100% {
+        top: 665px;
+        left: 715px;
+    }
+}
+
+@keyframes disapear {
+    100% {
+        display: none;
+    }
+}
+
 
 html,
 body {
@@ -17,11 +96,35 @@ body {
 
 .img {
     position: absolute;
-    height: 100px;
+    height: 50px;
 }
 
 /* use animations */
 
+#mans {
+    animation: mans 1s linear 1s 1 normal forwards;
+}
+
 #mordor {
-    animation: mordor 1s linear 1s 1 normal forwards;
+    animation: mordor 1s linear 1s 1 normal forwards, mordor_retreat 2s linear 6s 1 normal forwards, disapear 13s linear 1s 1 normal forwards;
+}
+
+#harad {
+    animation: harad 1s linear 1s 1 normal forwards, disapear 5s linear 1s 1 normal forwards;
+}
+
+#umbar {
+    animation: umbar 1s linear 1s 1 normal forwards, disapear 5s linear 1s 1 normal forwards;
+}
+
+#isengard {
+    animation: isengard 1s linear 3s 1 normal forwards,  disapear 5s linear 1s 1 normal forwards;
+}
+
+#elfs {
+    animation: elfs 1s linear 1s 1 normal forwards;
+}
+
+#gondor {
+    animation: gondor 2s linear 7s 1 normal forwards;
 }
