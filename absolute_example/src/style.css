@@ -1,9 +1,19 @@
 .absolute {
     position: absolute;
+    background-color: green;
+    color: white;
     top: 500px;
     left: 500px;
 }
 
 .relative {
     position: relative;
+    background-color: red;
+    color: white;
+}
+
+.static-div {
+    position: static;
+    background-color: blue;
+    color: white;
 }
