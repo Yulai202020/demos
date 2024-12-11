@@ -104,7 +104,7 @@
 html,
 body {
     height: 100vh;
-    background-image: url("../public/map.jpg");
+    background-image: url("../public/map.avif");
     background-repeat: no-repeat;
     background-size: contain;
 }
