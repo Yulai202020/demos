@@ -104,7 +104,7 @@
 html,
 body {
     height: 100vh;
-    background-image: url("https://tolkienists.ru/images/gallery/6/471004981.jpg");
+    background-image: url("../public/map.jpg");
     background-repeat: no-repeat;
     background-size: contain;
 }
