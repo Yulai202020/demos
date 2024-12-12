@@ -2,8 +2,8 @@
     position: absolute;
     background-color: green;
     color: white;
-    top: 500px;
-    left: 500px;
+    top: -300px;
+    left: -10px;
 }
 
 .relative {
@@ -16,4 +16,16 @@
     position: static;
     background-color: blue;
     color: white;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.relative1 {
+    position: relative;
 }
