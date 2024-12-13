@@ -2,28 +2,16 @@
     position: absolute;
     background-color: green;
     color: white;
+}
+
+.up {
     top: -300px;
     left: -10px;
 }
 
-.relative {
-    position: relative;
-    background-color: red;
-    color: white;
-}
-
-.relative-move {
-    position: relative;
-    background-color: red;
-    color: white;
-    top: 10px;
-    right: 10px;
-}
-
-.static-div {
-    position: static;
-    background-color: blue;
-    color: white;
+.down {
+    bottom: -300px;
+    left: 10px;
 }
 
 .centered {
@@ -36,4 +24,5 @@
 
 .relative-father {
     position: relative;
+    border: 1px solid black;
 }
