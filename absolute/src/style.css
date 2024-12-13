@@ -2,6 +2,7 @@
     position: absolute;
     background-color: green;
     color: white;
+    padding: 10px;
 }
 
 .up {
@@ -23,6 +24,7 @@
 }
 
 .relative-father {
+    padding: 10px;
     position: relative;
     border: 1px solid black;
 }
