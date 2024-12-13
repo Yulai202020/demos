@@ -1,0 +1,8 @@
+.sticky {
+    position: sticky;
+    top: 10px;
+    left: 10px;
+    background-color: blue;
+    color: white;
+    padding: 10px;
+}
