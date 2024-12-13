@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    width: 154px;
+    position: absolute;
+    color: white;
+    z-index: 1;
+    padding: 10px;
+}
+
+.z-index-1 {
+    background-color: blue;
+    top: 35px;
+    left: 10px;
+}
+
+.z-index-0 {
+    background-color: red;
+    z-index: 0;
+    top: 0;
+    left: 0;
+}
