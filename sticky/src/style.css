@@ -1,8 +1,14 @@
 .sticky {
     position: sticky;
-    top: 10px;
+    top: 0;
     left: 10px;
     background-color: blue;
     color: white;
     padding: 10px;
+}
+
+main {
+    /* height: 100%; */
+    padding: 0;
+    width: 100%;
 }
