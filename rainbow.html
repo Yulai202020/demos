@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        function mod(number, max) {
+            return number > max ? max : number;
+        }
+
+        async function updateColor() {
+            let color = 0;
+            
+            const element = document.getElementById("element");
+            
+            while (color < 255) {
+                element.setAttribute("style", `background-color: rgb(255, ${color}, 0);`);
+                color++;
+                await sleep(10);
+            }
+
+            while (color > 0) {
+                element.setAttribute("style", `background-color: rgb(${color}, 255, 0);`);
+                color--;
+                await sleep(10);
+            }
+
+            while (color < 255) {
+                element.setAttribute("style", `background-color: rgb(0, 255, ${color});`);
+                color++;
+                await sleep(10);
+            }
+
+            while (color > 0) {
+                element.setAttribute("style", `background-color: rgb(0, ${color}, 255);`);
+                color--;
+                await sleep(10);
+            }
+
+            while (color < 255) {
+                element.setAttribute("style", `background-color: rgb(${color}, 0, 255);`);
+                color++;
+                await sleep(10);
+            }
+
+            while (color > 0) {
+                element.setAttribute("style", `background-color: rgb(255, 0, ${color});`);
+                color--;
+                await sleep(10);
+            }
+
+            updateColor();
+        }
+
+        async function a() {
+            let color = 0;
+            
+            const element = document.getElementById("element");
+            
+            while (color < 255) {
+                element.setAttribute("style", `background-image: linear-gradient(rgb(255, ${color}, 0), rgb(255, ${color-50}, 0));`);
+                color++;
+                await sleep(10);
+            }
+
+            color+=300;
+            while (color > 0) {
+                element.setAttribute("style", `background-image: linear-gradient(rgb(${mod(color-50, 255)}, 255, 0), rgb(${color}, 255, 0));`);
+                color--;
+                await sleep(10);
+            }
+
+            while (color < 255) {
+                element.setAttribute("style", `background-image: linear-gradient(0, 255, ${color});`);
+                color++;
+                await sleep(10);
+            }
+
+            while (color > 0) {
+                element.setAttribute("style", `background-image: linear-gradient(0, ${color}, 255);`);
+                color--;
+                await sleep(10);
+            }
+
+            while (color < 255) {
+                element.setAttribute("style", `background-image: linear-gradient(${color}, 0, 255);`);
+                color++;
+                await sleep(10);
+            }
+
+            while (color > 0) {
+                element.setAttribute("style", `background-image: linear-gradient(255, 0, ${color});`);
+                color--;
+                await sleep(10);
+            }
+
+            a();
+        }
+
+        window.onload = function() {
+            a();
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            padding: 100px;
+            border: none;
+            border-radius: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button id="element">Button</button>
+</body>
+</html>

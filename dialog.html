@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function dialogOpen() {
+            document.getElementById("dialog").setAttribute("open", "");
+        }
+
+        function dialogClose() {
+            document.getElementById("dialog").removeAttribute("open");
+        }
+    </script>
+    <style>
+        body:has(dialog[open]) {
+            overflow: hidden;
+            pointer-events: none;
+            backdrop-filter: blur(4px);
+            background-color: black;
+        }
+
+        dialog {
+            pointer-events: all;
+            filter: none;
+        }
+    </style>
+</head>
+<body>
+    <dialog id="dialog">
+        This is an open dialog window
+        <button onclick="dialogClose()">X</button>
+    </dialog>
+    
+    <main>
+        <button onclick="dialogOpen()">toggle</button>
+    </main>
+</body>
+</html>
