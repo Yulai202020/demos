@@ -14,8 +14,7 @@ body>* {
 }
 
 .child {
-    padding: 10px;
-    padding-inline: 100px;
+    padding: 30px;
 
     background-color: red;
     color: white;
