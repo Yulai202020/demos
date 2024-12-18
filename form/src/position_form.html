@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="main.css"/>
+</head>
+<body>
+    <div class="parent" id="parent">
+        <div class="child" id="move">
+            <h1>Movable div</h1>
+        </div>
+    </div>
+
+    <form>
+        <label>Parent</label>
+
+        <label for="position-parent">Position</label>
+        <select id="position-parent" onchange="onChange(event, 'p')">
+            <option value="static">static</option>
+            <option value="absolute">absolute</option>
+            <option value="relative">relative</option>
+            <option value="fixed">fixed</option>
+            <option value="sticky">sticky</option>
+        </select>
+
+        <label for="unit-parent">Unit</label>
+        <select id="unit-parent" onchange="onChange(event, 'p')">
+            <option value="px">px</option>
+            <option value="%">%</option>
+
+            <option value="em">em</option>
+            <option value="rem">rem</option>
+
+            <option value="rem">vh</option>
+            <option value="rem">vw</option>
+
+            <option value="cm">cm</option>
+            <option value="in">in</option>
+        </select>
+
+        <label for="top-parent">Top</label>
+        <div>    
+            <input type="number" id="top-parent" onchange="onChange(event, 'p')" />
+        </div>
+
+        <label for="bottom-parent">Bottom</label>
+        <div>
+            <input type="number" id="bottom-parent" onchange="onChange(event, 'p')" />
+        </div>
+
+        <label for="right-parent">Right</label>
+        <div>
+            <input type="number" id="right-parent" onchange="onChange(event, 'p')" />
+        </div>
+
+        <label for="left-parent">Left</label>
+        <div>
+            <input type="number" id="left-parent" onchange="onChange(event, 'p')" />
+        </div>
+    </form>
+
+    <form>
+        <label>Child</label>
+
+        <label for="position-move">Position</label>
+        <select id="position-move" onchange="onChange(event, 'c')">
+            <option value="static">static</option>
+            <option value="absolute">absolute</option>
+            <option value="relative">relative</option>
+            <option value="fixed">fixed</option>
+            <option value="sticky">sticky</option>
+        </select>
+
+        <label for="unit-move">Unit</label>
+        <select id="unit-move" onchange="onChange(event, 'c')">
+            <option value="px">px</option>
+            <option value="%">%</option>
+
+            <option value="em">em</option>
+            <option value="rem">rem</option>
+
+            <option value="rem">vh</option>
+            <option value="rem">vw</option>
+
+            <option value="cm">cm</option>
+            <option value="in">in</option>
+        </select>
+        
+        <label for="top-move">Top</label>
+        <div>    
+            <input type="number" id="top-move" onchange="onChange(event, 'c')" />
+        </div>
+
+        <label for="bottom-move">Bottom</label>
+        <div>
+            <input type="number" id="bottom-move" onchange="onChange(event, 'c')" />
+        </div>
+
+        <label for="right">Right</label>
+        <div>
+            <input type="number" id="right-move" onchange="onChange(event, 'c')" />
+        </div>
+
+        <label for="left">Left</label>
+        <div>
+            <input type="number" id="left-move" onchange="onChange(event, 'c')" />
+        </div>
+    </form>
+</body>
+</html>
