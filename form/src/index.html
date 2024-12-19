@@ -10,6 +10,7 @@
 <body>
     <button onclick="parentDialogOpen()" class="open-button">Parent</button>
     <button onclick="childDialogOpen()" class="open-button">Child</button>
+
     <div class="parent" id="parent">
         <div class="child" id="move">
             <h1>Movable div</h1>
@@ -64,19 +65,24 @@
                 <input type="number" id="left-parent" onchange="onChange(event, 'p')" />
             </div>
 
+            <label for="z-index-parent">Z-index</label>
+            <div>
+                <input type="number" id="z-index-parent" onchange="onChange(event, 'p')" />
+            </div>
+
             <div>
                 <label for="color-parent">Color</label>
-                <input type="color" id="color-parent" onchange="onChange(event, 'p')" />
+                <input type="color" id="color-parent" value="#000000" onchange="onChange(event, 'p')" />
             </div>
 
             <div>
                 <label for="border-color-parent">Border color</label>
-                <input type="color" id="border-color-parent" onchange="onChange(event, 'p')" />
+                <input type="color" id="border-color-parent" value="#000000" onchange="onChange(event, 'p')" />
             </div>
 
             <div>
                 <label for="background-color-parent">Background color</label>
-                <input type="color" id="background-color-parent" onchange="onChange(event, 'p')" />
+                <input type="color" id="background-color-parent" value="#FFFFFF" onchange="onChange(event, 'p')" />
             </div>
         </form>
 
@@ -131,19 +137,24 @@
                 <input type="number" id="left-move" onchange="onChange(event, 'c')" />
             </div>
 
+            <label for="z-index-move">Z-index</label>
+            <div>
+                <input type="number" id="z-index-move" onchange="onChange(event, 'c')" />
+            </div>
+
             <div>
                 <label for="color-move">Color</label>
-                <input type="color" id="color-move" onchange="onChange(event, 'c')" />
+                <input type="color" id="color-move" value="#FFFFFF" onchange="onChange(event, 'c')" />
             </div>
 
             <div>
                 <label for="border-color-move">Border color</label>
-                <input type="color" id="border-color-move" onchange="onChange(event, 'c')" />
+                <input type="color" id="border-color-move" value="#FFFFFF" onchange="onChange(event, 'c')" />
             </div>
 
             <div>
                 <label for="background-color-move">Background color</label>
-                <input type="color" id="background-color-move" onchange="onChange(event, 'c')" />
+                <input type="color" id="background-color-move" value="#FF0000" onchange="onChange(event, 'c')" />
             </div>
         </form>
 

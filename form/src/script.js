@@ -9,13 +9,14 @@ function onChange(e, type) {
     const background_color = document.getElementById("background-color-"+id).value;
     const unit = document.getElementById("unit-"+id).value;
     const position = document.getElementById("position-"+id).value;
+    const z_index = document.getElementById("z-index-"+id).value;
 
     const top = document.getElementById("top-"+id).value + unit;
     const bottom = document.getElementById("bottom-"+id).value + unit;
     const right = document.getElementById("right-"+id).value + unit;
     const left = document.getElementById("left-"+id).value + unit;
 
-    moving.setAttribute("style", `position: ${position}; ${top !== unit && `top: ${top}`}; ${bottom !== unit && `bottom: ${bottom}`}; ${right !== unit && `right: ${right}`}; ${left !== unit && `left: ${left}`}; color: ${color}; border: 1px solid ${border_color}; background-color: ${background_color}`);
+    moving.setAttribute("style", `position: ${position}; ${top !== unit && `top: ${top}`}; ${bottom !== unit && `bottom: ${bottom}`}; ${right !== unit && `right: ${right}`}; ${left !== unit && `left: ${left}`}; color: ${color}; border: 1px solid ${border_color}; background-color: ${background_color}; ${z_index !== "" && `z-index: ${z_index}`}`);
 }
 
 function parentDialogOpen() {
@@ -42,18 +43,12 @@ document.addEventListener("keydown", (event) => {
     console.log(event.shiftKey)
     console.log(event.key)
     if (event.shiftKey && event.key === "!") {
+        parentDialogClose();
         childDialogOpen();
     }
 
     if (event.shiftKey && event.key === "@") {
         childDialogClose();
-    }
-
-    if (event.shiftKey && event.key === "#") {
         parentDialogOpen();
-    }
-
-    if (event.shiftKey && event.key === "$") {
-        parentDialogClose();
     }
 })
