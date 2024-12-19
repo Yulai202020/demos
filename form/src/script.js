@@ -37,3 +37,21 @@ function childDialogClose() {
     const child_dialog = document.getElementById("child-dialog");
     child_dialog.close();
 }
+
+document.addEventListener("keydown", (event) => {
+    if (event.ctrlKey && event.key === "1") {
+        childDialogOpen();
+    }
+
+    if (event.ctrlKey && event.key === "2") {
+        childDialogClose();
+    }
+
+    if (event.ctrlKey && event.key === "3") {
+        parentDialogOpen();
+    }
+
+    if (event.ctrlKey && event.key === "4") {
+        parentDialogClose();
+    }
+})
