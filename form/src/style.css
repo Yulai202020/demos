@@ -31,3 +31,31 @@ form {
 form>*{
     margin: 5px;
 }
+
+dialog::backdrop {
+    pointer-events: none;
+    backdrop-filter: blur(3px);
+}
+
+dialog {
+    position: relative;
+    top: 25%;
+    left: 40%;
+}
+
+.close-button {
+    background: none;
+    color: red;
+    border: none;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.open-button {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+}

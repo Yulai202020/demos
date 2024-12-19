@@ -6,35 +6,50 @@
     <title>Document</title>
     <script>
         function dialogOpen() {
-            document.getElementById("dialog").setAttribute("open", "");
+            const dialog = document.getElementById("dialog");
+            dialog.showModal();
         }
 
         function dialogClose() {
-            document.getElementById("dialog").removeAttribute("open");
-        }
-    </script>
-    <style>
-        body:has(dialog[open]) {
-            overflow: hidden;
-            pointer-events: none;
-            backdrop-filter: blur(4px);
-            background-color: black;
+            const dialog = document.getElementById("dialog");
+            dialog.close();
         }
 
-        dialog {
-            pointer-events: all;
-            filter: none;
+        function onClick() {
+            alert("a");
+        }
+
+        document.addEventListener("keydown", (event) => {
+            if (event.ctrlKey && event.key === "/") {
+                dialogOpen();
+            }
+
+            if (event.ctrlKey && event.key === "Enter") {
+                dialogClose();
+            }
+        })
+    </script>
+    <style>
+        dialog::backdrop {
+            pointer-events: none;
+            backdrop-filter: blur(1px);
+        }
+
+        .close-button {
+            background: none;
+            border: none;
+            color: red;
         }
     </style>
 </head>
 <body>
+
     <dialog id="dialog">
         This is an open dialog window
-        <button onclick="dialogClose()">X</button>
+        <button onclick="dialogClose()" class="close-button">X</button>
     </dialog>
     
-    <main>
-        <button onclick="dialogOpen()">toggle</button>
-    </main>
+    <button onclick="dialogOpen()">Open Dialog</button>
+    <button onclick="onClick()">alert</button>
 </body>
 </html>

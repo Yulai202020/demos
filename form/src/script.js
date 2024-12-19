@@ -17,3 +17,23 @@ function onChange(e, type) {
 
     moving.setAttribute("style", `position: ${position}; ${top !== unit && `top: ${top}`}; ${bottom !== unit && `bottom: ${bottom}`}; ${right !== unit && `right: ${right}`}; ${left !== unit && `left: ${left}`}; color: ${color}; border: 1px solid ${border_color}; background-color: ${background_color}`);
 }
+
+function parentDialogOpen() {
+    const parent_dialog = document.getElementById("parent-dialog");
+    parent_dialog.showModal();
+}
+
+function parentDialogClose() {
+    const parent_dialog = document.getElementById("parent-dialog");
+    parent_dialog.close();
+}
+
+function childDialogOpen() {
+    const child_dialog = document.getElementById("child-dialog");
+    child_dialog.showModal();
+}
+
+function childDialogClose() {
+    const child_dialog = document.getElementById("child-dialog");
+    child_dialog.close();
+}

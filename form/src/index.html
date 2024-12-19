@@ -8,136 +8,146 @@
     <link rel="stylesheet" href="main.css"/>
 </head>
 <body>
+    <button onclick="parentDialogOpen()" class="open-button">Parent</button>
+    <button onclick="childDialogOpen()" class="open-button">Child</button>
     <div class="parent" id="parent">
         <div class="child" id="move">
             <h1>Movable div</h1>
         </div>
     </div>
 
-    <form>
-        <label>Parent</label>
+    <dialog id="parent-dialog">
+        <form>
+            <label>Parent</label>
 
-        <label for="position-parent">Position</label>
-        <select id="position-parent" onchange="onChange(event, 'p')">
-            <option value="static">static</option>
-            <option value="absolute">absolute</option>
-            <option value="relative">relative</option>
-            <option value="fixed">fixed</option>
-            <option value="sticky">sticky</option>
-        </select>
+            <label for="position-parent">Position</label>
+            <select id="position-parent" onchange="onChange(event, 'p')">
+                <option value="static">static</option>
+                <option value="absolute">absolute</option>
+                <option value="relative">relative</option>
+                <option value="fixed">fixed</option>
+                <option value="sticky">sticky</option>
+            </select>
 
-        <label for="unit-parent">Unit</label>
-        <select id="unit-parent" onchange="onChange(event, 'p')">
-            <option value="px">px</option>
-            <option value="%">%</option>
+            <label for="unit-parent">Unit</label>
+            <select id="unit-parent" onchange="onChange(event, 'p')">
+                <option value="px">px</option>
+                <option value="%">%</option>
 
-            <option value="em">em</option>
-            <option value="rem">rem</option>
+                <option value="em">em</option>
+                <option value="rem">rem</option>
 
-            <option value="rem">vh</option>
-            <option value="rem">vw</option>
+                <option value="rem">vh</option>
+                <option value="rem">vw</option>
 
-            <option value="cm">cm</option>
-            <option value="in">in</option>
-        </select>
+                <option value="cm">cm</option>
+                <option value="in">in</option>
+            </select>
 
-        <label for="top-parent">Top</label>
-        <div>    
-            <input type="number" id="top-parent" onchange="onChange(event, 'p')" />
-        </div>
+            <label for="top-parent">Top</label>
+            <div>    
+                <input type="number" id="top-parent" onchange="onChange(event, 'p')" />
+            </div>
 
-        <label for="bottom-parent">Bottom</label>
-        <div>
-            <input type="number" id="bottom-parent" onchange="onChange(event, 'p')" />
-        </div>
+            <label for="bottom-parent">Bottom</label>
+            <div>
+                <input type="number" id="bottom-parent" onchange="onChange(event, 'p')" />
+            </div>
 
-        <label for="right-parent">Right</label>
-        <div>
-            <input type="number" id="right-parent" onchange="onChange(event, 'p')" />
-        </div>
+            <label for="right-parent">Right</label>
+            <div>
+                <input type="number" id="right-parent" onchange="onChange(event, 'p')" />
+            </div>
 
-        <label for="left-parent">Left</label>
-        <div>
-            <input type="number" id="left-parent" onchange="onChange(event, 'p')" />
-        </div>
+            <label for="left-parent">Left</label>
+            <div>
+                <input type="number" id="left-parent" onchange="onChange(event, 'p')" />
+            </div>
 
-        <div>
-            <label for="color-parent">Color</label>
-            <input type="color" id="color-parent" onchange="onChange(event, 'p')" />
-        </div>
+            <div>
+                <label for="color-parent">Color</label>
+                <input type="color" id="color-parent" onchange="onChange(event, 'p')" />
+            </div>
 
-        <div>
-            <label for="border-color-parent">Border color</label>
-            <input type="color" id="border-color-parent" onchange="onChange(event, 'p')" />
-        </div>
+            <div>
+                <label for="border-color-parent">Border color</label>
+                <input type="color" id="border-color-parent" onchange="onChange(event, 'p')" />
+            </div>
 
-        <div>
-            <label for="background-color-parent">Background color</label>
-            <input type="color" id="background-color-parent" onchange="onChange(event, 'p')" />
-        </div>
-    </form>
+            <div>
+                <label for="background-color-parent">Background color</label>
+                <input type="color" id="background-color-parent" onchange="onChange(event, 'p')" />
+            </div>
+        </form>
 
-    <form>
-        <label>Child</label>
+        <button onclick="parentDialogClose()" class="close-button">X</button>
+    </dialog>
 
-        <label for="position-move">Position</label>
-        <select id="position-move" onchange="onChange(event, 'c')">
-            <option value="static">static</option>
-            <option value="absolute">absolute</option>
-            <option value="relative">relative</option>
-            <option value="fixed">fixed</option>
-            <option value="sticky">sticky</option>
-        </select>
+    <dialog id="child-dialog">
+        <form>
+            <label>Child</label>
 
-        <label for="unit-move">Unit</label>
-        <select id="unit-move" onchange="onChange(event, 'c')">
-            <option value="px">px</option>
-            <option value="%">%</option>
+            <label for="position-move">Position</label>
+            <select id="position-move" onchange="onChange(event, 'c')">
+                <option value="static">static</option>
+                <option value="absolute">absolute</option>
+                <option value="relative">relative</option>
+                <option value="fixed">fixed</option>
+                <option value="sticky">sticky</option>
+            </select>
 
-            <option value="em">em</option>
-            <option value="rem">rem</option>
+            <label for="unit-move">Unit</label>
+            <select id="unit-move" onchange="onChange(event, 'c')">
+                <option value="px">px</option>
+                <option value="%">%</option>
 
-            <option value="rem">vh</option>
-            <option value="rem">vw</option>
+                <option value="em">em</option>
+                <option value="rem">rem</option>
 
-            <option value="cm">cm</option>
-            <option value="in">in</option>
-        </select>
-        
-        <label for="top-move">Top</label>
-        <div>    
-            <input type="number" id="top-move" onchange="onChange(event, 'c')" />
-        </div>
+                <option value="rem">vh</option>
+                <option value="rem">vw</option>
 
-        <label for="bottom-move">Bottom</label>
-        <div>
-            <input type="number" id="bottom-move" onchange="onChange(event, 'c')" />
-        </div>
+                <option value="cm">cm</option>
+                <option value="in">in</option>
+            </select>
+            
+            <label for="top-move">Top</label>
+            <div>    
+                <input type="number" id="top-move" onchange="onChange(event, 'c')" />
+            </div>
 
-        <label for="right-move">Right</label>
-        <div>
-            <input type="number" id="right-move" onchange="onChange(event, 'c')" />
-        </div>
+            <label for="bottom-move">Bottom</label>
+            <div>
+                <input type="number" id="bottom-move" onchange="onChange(event, 'c')" />
+            </div>
 
-        <label for="left-move">Left</label>
-        <div>
-            <input type="number" id="left-move" onchange="onChange(event, 'c')" />
-        </div>
+            <label for="right-move">Right</label>
+            <div>
+                <input type="number" id="right-move" onchange="onChange(event, 'c')" />
+            </div>
 
-        <div>
-            <label for="color-move">Color</label>
-            <input type="color" id="color-move" onchange="onChange(event, 'c')" />
-        </div>
+            <label for="left-move">Left</label>
+            <div>
+                <input type="number" id="left-move" onchange="onChange(event, 'c')" />
+            </div>
 
-        <div>
-            <label for="border-color-move">Border color</label>
-            <input type="color" id="border-color-move" onchange="onChange(event, 'c')" />
-        </div>
+            <div>
+                <label for="color-move">Color</label>
+                <input type="color" id="color-move" onchange="onChange(event, 'c')" />
+            </div>
 
-        <div>
-            <label for="background-color-move">Background color</label>
-            <input type="color" id="background-color-move" onchange="onChange(event, 'c')" />
-        </div>
-    </form>
+            <div>
+                <label for="border-color-move">Border color</label>
+                <input type="color" id="border-color-move" onchange="onChange(event, 'c')" />
+            </div>
+
+            <div>
+                <label for="background-color-move">Background color</label>
+                <input type="color" id="background-color-move" onchange="onChange(event, 'c')" />
+            </div>
+        </form>
+
+        <button onclick="childDialogClose()" class="close-button">X</button>
+    </dialog>
 </body>
-</html>*
+</html>
