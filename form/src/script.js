@@ -39,19 +39,21 @@ function childDialogClose() {
 }
 
 document.addEventListener("keydown", (event) => {
-    if (event.ctrlKey && event.key === "1") {
+    console.log(event.shiftKey)
+    console.log(event.key)
+    if (event.shiftKey && event.key === "!") {
         childDialogOpen();
     }
 
-    if (event.ctrlKey && event.key === "2") {
+    if (event.shiftKey && event.key === "@") {
         childDialogClose();
     }
 
-    if (event.ctrlKey && event.key === "3") {
+    if (event.shiftKey && event.key === "#") {
         parentDialogOpen();
     }
 
-    if (event.ctrlKey && event.key === "4") {
+    if (event.shiftKey && event.key === "$") {
         parentDialogClose();
     }
 })
