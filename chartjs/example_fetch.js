@@ -15,7 +15,7 @@ function example_with_fetch_data() {
     
     
         new Chart(ctx, {
-            type: 'doughnut',
+            type: 'line',
             data: {
                 labels: xData,
                 datasets: [{
