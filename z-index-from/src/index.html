@@ -13,26 +13,44 @@
       function create(e) {
         e.preventDefault();
 
+        // display none
         const form = document.getElementById("form");
         form.classList.add("none");
 
+        // get elements
         const container = document.getElementById("container");
         const text = document.getElementById("text");
 
+        // create div
         const div = document.createElement("div");
+        div.classList.add("child");
+
+        // create content
         const content = document.createTextNode(text.value);
-        text.value = "";
 
+        // append
         div.appendChild(content);
-
-        console.log(div);
-
         container.appendChild(div);
+
+        // clear text value
+        text.value = "";
+      }
+
+      function onClickDiv(event) {
+        const target = event.target;
+
+        console.log(target);
+      }
+
+      window.onload = function () {
+        const child = document.getElementsByClassName("child");
+
+        for (let i = 0; i < child.length; i++) {
+          child[i].addEventListener('click', onClickDiv(event), false);
+        }
       }
     </script>
-    <style>
-      
-    </style>
+    <link rel="stylesheet" href="main.css"/>
   </head>
   <body>
     <button onclick="add(event)">Add</button>

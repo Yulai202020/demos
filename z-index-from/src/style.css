@@ -9,11 +9,15 @@ body>* {
     border-radius: 10px;
 }
 
-.container>* {
+.child {
     padding: 5px;
 
     border: 1px solid black;
     border-radius: 10px;
+}
+
+.child:hover {
+    border: 1px dashed black;
 }
 
 .none {
