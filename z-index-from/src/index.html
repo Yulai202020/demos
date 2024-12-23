@@ -4,63 +4,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script>
-      function add(e) {
-        const form = document.getElementById("form");
-        form.classList.remove("none");
-      }
 
-      function create(e) {
-        e.preventDefault();
-
-        // display none
-        const form = document.getElementById("form");
-        form.classList.add("none");
-
-        // get elements
-        const container = document.getElementById("container");
-        const text = document.getElementById("text");
-
-        // create div
-        const div = document.createElement("div");
-        div.classList.add("child");
-
-        // create content
-        const content = document.createTextNode(text.value);
-
-        // append
-        div.appendChild(content);
-        container.appendChild(div);
-
-        // clear text value
-        text.value = "";
-      }
-
-      function onClickDiv(event) {
-        const target = event.target;
-
-        console.log(target);
-      }
-
-      window.onload = function () {
-        const child = document.getElementsByClassName("child");
-
-        for (let i = 0; i < child.length; i++) {
-          child[i].addEventListener('click', onClickDiv(event), false);
-        }
-      }
-    </script>
+    <script src="script.js"></script>
     <link rel="stylesheet" href="main.css"/>
   </head>
   <body>
-    <button onclick="add(event)">Add</button>
-
     <div class="container" id="container"></div>
 
-    <form class="none" id="form">
-      <input type="text" id="text" />
+    <form id="form">
+        <label id="type">Creation</label>
 
-      <button onclick="create(event)">Sumbit</button>
+        <label for="position">Position</label>
+        <select id="position">
+            <option value="static">static</option>
+            <option value="absolute">absolute</option>
+            <option value="relative">relative</option>
+            <option value="fixed">fixed</option>
+            <option value="sticky">sticky</option>
+        </select>
+
+        <label for="unit">Unit</label>
+        <select id="unit">
+            <option value="px">px</option>
+            <option value="%">%</option>
+
+            <option value="em">em</option>
+            <option value="rem">rem</option>
+
+            <option value="rem">vh</option>
+            <option value="rem">vw</option>
+
+            <option value="cm">cm</option>
+            <option value="in">in</option>
+        </select>
+
+        <label for="text">Text</label>
+        <div>    
+            <input type="text" id="text" />
+        </div>
+
+        <label for="top">Top</label>
+        <div>    
+            <input type="number" id="top" />
+        </div>
+
+        <label for="bottom">Bottom</label>
+        <div>
+            <input type="number" id="bottom" />
+        </div>
+
+        <label for="right">Right</label>
+        <div>
+            <input type="number" id="right" />
+        </div>
+
+        <label for="left">Left</label>
+        <div>
+            <input type="number" id="left" />
+        </div>
+
+        <label for="z-index">Z-index</label>
+        <div>
+            <input type="number" id="z-index" />
+        </div>
+
+        <!-- <div>
+            <label for="color-parent">Color</label>
+            <input type="color" id="color-parent" value="#000000" onchange="onChange(event, 'p')" />
+        </div>
+
+        <div>
+            <label for="border-color-parent">Border color</label>
+            <input type="color" id="border-color-parent" value="#000000" onchange="onChange(event, 'p')" />
+        </div>
+
+        <div>
+            <label for="background-color-parent">Background color</label>
+            <input type="color" id="background-color-parent" value="#FFFFFF" onchange="onChange(event, 'p')" />
+        </div> -->
+        <button onclick="create(event)">Sumbit</button>
     </form>
   </body>
 </html>
