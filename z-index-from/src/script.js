@@ -24,7 +24,6 @@ function create(e) {
         isChanging = false;
         Changing = null;
 
-        document.getElementById("form").reset();
     } else {
         // get elements
         const container = document.getElementById("container");
@@ -40,9 +39,9 @@ function create(e) {
         // append
         div.innerHTML = text;
         container.appendChild(div);
-
-        document.getElementById("form").reset();
     }
+
+    document.getElementById("form").reset();
 }
 
 function onClickDiv(event) {
@@ -71,5 +70,5 @@ function onClickDiv(event) {
 
 function extractUnit(cssValue) {
     const match = cssValue.match(/[a-zA-Z%]+/);
-    return match ? match[0] : '';
+    return match ? match[0] : 'px';
 }
