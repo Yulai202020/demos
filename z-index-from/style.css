@@ -1,0 +1,36 @@
+body>* {
+    margin: 0.5rem;
+}
+
+.container {
+    padding: 10px;
+
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.container>* {
+    padding: 5px;
+
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.none {
+    display: none;
+}
+
+#form {
+    padding: 10px;
+
+    border: 1px solid black;
+    border-radius: 10px;
+
+    position: absolute;
+    top: 50%;
+    left: 40%;
+}
+
+#form>* {
+    margin: 5px;
+}
