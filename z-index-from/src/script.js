@@ -45,27 +45,29 @@ function create(e) {
 }
 
 function onClickDiv(event) {
-    const type = document.getElementById("type");
-    type.textContent = "Edition";
-
     const target = event.target;
 
-    // document.getElementById("unit").value;
-
-    document.getElementById("text").value = target.textContent;
-    document.getElementById("position").value = target.style.position;
-    document.getElementById("top").value = target.style.top;
-    document.getElementById("bottom").value = target.style.top;
-    document.getElementById("left").value = target.style.left;
-    document.getElementById("right").value = target.style.right;
-    document.getElementById("z-index").value = target.style.zIndex;
-
-    const top = target.style.top;
-
-    document.getElementById("unit").value = extractUnit(top);
-
-    Changing = target;
-    isChanging = true;
+    if (event.shiftKey) {
+        target.remove();
+    } else {
+        const type = document.getElementById("type");
+        type.textContent = "Edition";
+        
+        document.getElementById("text").value = target.textContent;
+        document.getElementById("position").value = target.style.position;
+        document.getElementById("top").value = target.style.top;
+        document.getElementById("bottom").value = target.style.top;
+        document.getElementById("left").value = target.style.left;
+        document.getElementById("right").value = target.style.right;
+        document.getElementById("z-index").value = target.style.zIndex;
+        
+        const top = target.style.top;
+        
+        document.getElementById("unit").value = extractUnit(top);
+        
+        Changing = target;
+        isChanging = true;
+    }
 }
 
 function extractUnit(cssValue) {
