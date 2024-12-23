@@ -4,8 +4,75 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script></script>
-    <style></style>
+    <script>
+      function add(e) {
+        const form = document.getElementById("form");
+        form.classList.remove("none");
+      }
+
+      function create(e) {
+        e.preventDefault();
+
+        const form = document.getElementById("form");
+        form.classList.add("none");
+
+        const container = document.getElementById("container");
+        const text = document.getElementById("text");
+
+        const div = document.createElement("div");
+        const content = document.createTextNode(text.value);
+        text.value = "";
+
+        div.appendChild(content);
+
+        console.log(div);
+
+        container.appendChild(div);
+      }
+    </script>
+    <style>
+      .none {
+        display: none;
+      }
+
+      #form {
+        position: absolute;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 10px;
+        top: 50%;
+        left: 40%;
+      }
+
+      #form>* {
+        margin: 5px;
+      }
+
+      .container {
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 10px;
+      }
+      .container>* {
+        padding: 5px;
+        border: 1px solid black;
+        border-radius: 10px;
+      }
+
+      body>* {
+        margin: 0.5rem;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <button onclick="add(event)">Add</button>
+
+    <div class="container" id="container"></div>
+
+    <form class="none" id="form">
+      <input type="text" id="text" />
+
+      <button onclick="create(event)">Sumbit</button>
+    </form>
+  </body>
 </html>
