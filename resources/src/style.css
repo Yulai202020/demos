@@ -1,0 +1,6 @@
+body > footer,
+body > header,
+body > main {
+  padding-left: 3rem;
+  padding-block: 0;
+}

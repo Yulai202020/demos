@@ -10,7 +10,6 @@ main {
   align-items: left;
   justify-content: flex-start;
   flex-direction: column;
-  /* height: 70vh; */
   padding: 2rem;
 }
 
