@@ -6,7 +6,6 @@ function create(e) {
 
     const unit = document.getElementById("unit").value;
 
-    const text = document.getElementById("text").value;
     const position = document.getElementById("position").value;
     const top = document.getElementById("top").value + unit;
     const bottom = document.getElementById("bottom").value + unit;
@@ -20,7 +19,6 @@ function create(e) {
 
     if (isChanging) {
         Changing.setAttribute("style", `position: ${position}; ${top !== unit && `top: ${top}`}; ${bottom !== unit && `bottom: ${bottom}`}; ${right !== unit && `right: ${right}`}; ${left !== unit && `left: ${left}`}; ${z_index !== "" && `z-index: ${z_index}`}; background-color: ${background_color}; border-color: ${border_color}; color: ${color};`);
-        Changing.innerHTML = text;
 
         const type = document.getElementById("type");
         type.textContent = "Creation";
@@ -42,7 +40,6 @@ function create(e) {
         div.addEventListener('click', onClickDiv);
 
         // append
-        div.innerHTML = text;
         container.appendChild(div);
     }
 
@@ -73,8 +70,6 @@ function onClickDiv(event) {
         document.getElementById("right").value = target.style.right;
         document.getElementById("z-index").value = target.style.zIndex;
 
-        // console.log(document.getElementById("background-color").value);
-        // console.log(target.style.backgroundColor);
         document.getElementById("background-color").value = target.style.backgroundColor;
         document.getElementById("border-color").value = target.style.borderColor;
         document.getElementById("color").value = target.style.color;
