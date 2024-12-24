@@ -40,8 +40,6 @@ function childDialogClose() {
 }
 
 document.addEventListener("keydown", (event) => {
-    console.log(event.shiftKey)
-    console.log(event.key)
     if (event.shiftKey && event.key === "!") {
         parentDialogClose();
         childDialogOpen();
