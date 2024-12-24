@@ -1,6 +1,8 @@
 let isChanging = false;
 let Changing;
 
+// using in js functions
+
 function componentToHex(c) {
     var hex = c.toString(16);
     return hex.length == 1 ? "0" + hex : hex;
@@ -14,7 +16,13 @@ function rgbToHex(text) {
 
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
-  
+
+function extractUnit(cssValue) {
+    const match = cssValue.match(/[a-zA-Z%]+/);
+    return match ? match[0] : 'px';
+}
+
+// using in html functions
 
 function create(e) {
     e.preventDefault();
@@ -32,8 +40,10 @@ function create(e) {
     const border_color = document.getElementById("border-color").value;
     const color = document.getElementById("color").value;
 
+    const style = `position: ${position}; ${top !== unit ? `top: ${top}` : ""}; ${bottom !== unit ? `bottom: ${bottom}` : ""}; ${right !== unit ? `right: ${right}` : ""}; ${left !== unit ? `left: ${left}`: ""}; ${z_index !== "" ? `z-index: ${z_index}` : ""}; background-color: ${background_color}; border-color: ${border_color}; color: ${color};`;
+
     if (isChanging) {
-        Changing.setAttribute("style", `position: ${position}; ${top !== unit && `top: ${top}`}; ${bottom !== unit && `bottom: ${bottom}`}; ${right !== unit && `right: ${right}`}; ${left !== unit && `left: ${left}`}; ${z_index !== "" && `z-index: ${z_index}`}; background-color: ${background_color}; border-color: ${border_color}; color: ${color};`);
+        Changing.setAttribute("style", style);
 
         const type = document.getElementById("type");
         type.textContent = "Creation";
@@ -49,7 +59,7 @@ function create(e) {
         const div = document.createElement("div");
         div.classList.add("child");
 
-        div.setAttribute("style", `position: ${position}; ${top !== unit && `top: ${top}`}; ${bottom !== unit && `bottom: ${bottom}`}; ${right !== unit && `right: ${right}`}; ${left !== unit && `left: ${left}`}; ${z_index !== "" && `z-index: ${z_index}`}; background-color: ${background_color}; border-color: ${border_color}; color: ${color};`);
+        div.setAttribute("style", style);
         div.setAttribute("contenteditable", "true");
 
         div.addEventListener('click', onClickDiv);
@@ -100,11 +110,6 @@ function onClickDiv(event) {
 
         dialogOpen();
     }
-}
-
-function extractUnit(cssValue) {
-    const match = cssValue.match(/[a-zA-Z%]+/);
-    return match ? match[0] : 'px';
 }
 
 document.addEventListener("keydown", (event) => {

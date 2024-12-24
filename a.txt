@@ -1,3 +1,1 @@
-position
-inset
-z-index
+add width height
