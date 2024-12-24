@@ -1,6 +1,21 @@
 let isChanging = false;
 let Changing;
 
+function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+  
+function rgbToHex(text) {
+    const rgbArray = text.match(/\d+/g);
+    const r = parseInt(rgbArray[0]);
+    const g = parseInt(rgbArray[1]);
+    const b = parseInt(rgbArray[2]);
+
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+  
+
 function create(e) {
     e.preventDefault();
 
@@ -44,6 +59,8 @@ function create(e) {
     }
 
     document.getElementById("form").reset();
+
+    dialogClose();
 }
 
 function dialogOpen() {
@@ -59,7 +76,7 @@ function onClickDiv(event) {
 
     if (event.shiftKey) {
         target.remove();
-    } else {
+    } else if (event.ctrlKey) {
         const type = document.getElementById("type");
         type.textContent = "Edit";
         
@@ -70,9 +87,9 @@ function onClickDiv(event) {
         document.getElementById("right").value = target.style.right;
         document.getElementById("z-index").value = target.style.zIndex;
 
-        document.getElementById("background-color").value = target.style.backgroundColor;
-        document.getElementById("border-color").value = target.style.borderColor;
-        document.getElementById("color").value = target.style.color;
+        document.getElementById("background-color").value = rgbToHex(target.style.backgroundColor);
+        document.getElementById("border-color").value = rgbToHex(target.style.borderColor);
+        document.getElementById("color").value = rgbToHex(target.style.color);
 
         const top = target.style.top;
         
@@ -80,6 +97,8 @@ function onClickDiv(event) {
         
         Changing = target;
         isChanging = true;
+
+        dialogOpen();
     }
 }
 
