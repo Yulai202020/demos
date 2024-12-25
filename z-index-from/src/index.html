@@ -1,101 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Form</title>
 
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="main.css"/>
-  </head>
-  <body>
-    <button onclick="dialogOpen()" class="open-button">Form</button>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="main.css" />
+    </head>
+    <body>
+        <button onclick="dialogOpen()" class="open-button">Form</button>
 
-    <div class="container" id="container"></div>
+        <div class="container" id="container"></div>
 
-    <dialog id="form-dialog">
-        <form id="form">
-            <label id="type">Creation</label>
+        <dialog id="form-dialog">
+            <form id="form">
+                <label id="type">Creation</label>
 
-            <label for="position">Position</label>
-            <select id="position">
-                <option value="static">static</option>
-                <option value="absolute">absolute</option>
-                <option value="relative">relative</option>
-                <option value="fixed">fixed</option>
-                <option value="sticky">sticky</option>
-            </select>
+                <label for="position">Position</label>
+                <select id="position">
+                    <option value="static">static</option>
+                    <option value="absolute">absolute</option>
+                    <option value="relative">relative</option>
+                    <option value="fixed">fixed</option>
+                    <option value="sticky">sticky</option>
+                </select>
 
-            <label for="unit">Unit</label>
-            <select id="unit">
-                <option value="px">px</option>
-                <option value="%">%</option>
+                <label for="unit">Unit</label>
+                <select id="unit">
+                    <option value="px">px</option>
+                    <option value="%">%</option>
 
-                <option value="em">em</option>
-                <option value="rem">rem</option>
+                    <option value="em">em</option>
+                    <option value="rem">rem</option>
 
-                <option value="rem">vh</option>
-                <option value="rem">vw</option>
+                    <option value="rem">vh</option>
+                    <option value="rem">vw</option>
 
-                <option value="cm">cm</option>
-                <option value="in">in</option>
-            </select>
+                    <option value="cm">cm</option>
+                    <option value="in">in</option>
+                </select>
 
-            <label for="top">Top</label>
-            <div>    
-                <input type="number" id="top" />
-            </div>
+                <label for="top">Top</label>
+                <div>
+                    <input type="number" id="top" />
+                </div>
 
-            <label for="bottom">Bottom</label>
-            <div>
-                <input type="number" id="bottom" />
-            </div>
+                <label for="bottom">Bottom</label>
+                <div>
+                    <input type="number" id="bottom" />
+                </div>
 
-            <label for="right">Right</label>
-            <div>
-                <input type="number" id="right" />
-            </div>
+                <label for="right">Right</label>
+                <div>
+                    <input type="number" id="right" />
+                </div>
 
-            <label for="left">Left</label>
-            <div>
-                <input type="number" id="left" />
-            </div>
+                <label for="left">Left</label>
+                <div>
+                    <input type="number" id="left" />
+                </div>
 
-            <label for="z-index">Z-index</label>
-            <div>
-                <input type="number" id="z-index" />
-            </div>
+                <label for="z-index">Z-index</label>
+                <div>
+                    <input type="number" id="z-index" />
+                </div>
 
-            <label for="width">Width</label>
-            <div>
-                <input type="number" id="width" />
-            </div>
+                <label for="width">Width</label>
+                <div>
+                    <input type="number" id="width" />
+                </div>
 
-            <label for="height">Height</label>
-            <div>
-                <input type="number" id="height" />
-            </div>
+                <label for="height">Height</label>
+                <div>
+                    <input type="number" id="height" />
+                </div>
 
+                <label for="color">Color</label>
+                <div>
+                    <input type="color" id="color" value="#000000" />
+                </div>
 
-            <label for="color">Color</label>
-            <div>
-                <input type="color" id="color" value="#000000" />
-            </div>
+                <label for="border-color">Border color</label>
+                <div>
+                    <input type="color" id="border-color" value="#000000" />
+                </div>
 
-            <label for="border-color">Border color</label>
-            <div>
-                <input type="color" id="border-color" value="#000000" />
-            </div>
-            
-            <label for="background-color">Background color</label>
-            <div>
-                <input type="color" id="background-color" value="#FFFFFF" />
-            </div>
+                <label for="background-color">Background color</label>
+                <div>
+                    <input type="color" id="background-color" value="#FFFFFF" />
+                </div>
 
-            <button onclick="create(event)">Create</button>
-        </form>
+                <button onclick="create(event)" class="open-button">
+                    Create
+                </button>
+            </form>
 
-        <button onclick="dialogClose()" class="close-button">X</button>
-    </dialog>
-  </body>
+            <button onclick="dialogClose()" class="close-button">X</button>
+        </dialog>
+    </body>
 </html>
