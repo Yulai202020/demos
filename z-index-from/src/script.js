@@ -62,7 +62,6 @@ function create(e) {
 
         isChanging = false;
         Changing = null;
-
     } else {
         // get elements
         const container = document.getElementById("container");
