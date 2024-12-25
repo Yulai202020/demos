@@ -58,7 +58,7 @@ function create(e) {
     Changing.setAttribute("style", style);
 
     const type = document.getElementById("type");
-    type.textContent = "Creation";
+    type.textContent = "Create";
 
     isChanging = false;
     Changing = null;

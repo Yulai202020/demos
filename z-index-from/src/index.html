@@ -15,79 +15,85 @@
 
         <dialog id="form-dialog">
             <form id="form">
-                <label id="type">Creation</label>
+                <div class="part1">
+                    <label id="type">Create</label>
+                </div>
 
-                <label for="position">Position</label>
-                <select id="position">
-                    <option value="static">static</option>
-                    <option value="absolute">absolute</option>
-                    <option value="relative">relative</option>
-                    <option value="fixed">fixed</option>
-                    <option value="sticky">sticky</option>
-                </select>
+                <div class="part">
+                    <label for="position">Position</label>
+                    <select id="position">
+                        <option value="static">static</option>
+                        <option value="absolute">absolute</option>
+                        <option value="relative">relative</option>
+                        <option value="fixed">fixed</option>
+                        <option value="sticky">sticky</option>
+                    </select>
+                </div>
 
-                <label for="unit">Unit</label>
-                <select id="unit">
-                    <option value="px">px</option>
-                    <option value="%">%</option>
+                <div class="part">
+                    <label for="unit">Unit</label>
+                    <select id="unit">
+                        <option value="px">px</option>
+                        <option value="%">%</option>
 
-                    <option value="em">em</option>
-                    <option value="rem">rem</option>
+                        <option value="em">em</option>
+                        <option value="rem">rem</option>
 
-                    <option value="rem">vh</option>
-                    <option value="rem">vw</option>
+                        <option value="rem">vh</option>
+                        <option value="rem">vw</option>
 
-                    <option value="cm">cm</option>
-                    <option value="in">in</option>
-                </select>
+                        <option value="cm">cm</option>
+                        <option value="in">in</option>
+                    </select>
+                </div>
 
-                <label for="top">Top</label>
-                <div>
+                <div class="part">
+                    <label for="top">Top</label>
                     <input type="number" id="top" />
                 </div>
 
-                <label for="bottom">Bottom</label>
-                <div>
+                <div class="part">
+                    <label for="bottom">Bottom</label>
                     <input type="number" id="bottom" />
                 </div>
 
-                <label for="right">Right</label>
-                <div>
+                <div class="part">
+                    <label for="right">Right</label>
                     <input type="number" id="right" />
                 </div>
 
-                <label for="left">Left</label>
-                <div>
+                <div class="part">
+                    <label for="left">Left</label>
                     <input type="number" id="left" />
                 </div>
 
-                <label for="z-index">Z-index</label>
-                <div>
+                <div class="part">
+                    <label for="z-index">Z-index</label>
                     <input type="number" id="z-index" />
                 </div>
 
-                <label for="width">Width</label>
-                <div>
+                <div class="part">
+                    <label for="width">Width</label>
                     <input type="number" id="width" />
                 </div>
 
-                <label for="height">Height</label>
-                <div>
+                <div class="part">
+                    <label for="height">Height</label>
                     <input type="number" id="height" />
                 </div>
 
-                <label for="color">Color</label>
-                <div>
+                <div class="part">
+                    <label for="color">Color</label>
                     <input type="color" id="color" value="#000000" />
                 </div>
 
-                <label for="border-color">Border color</label>
-                <div>
+                <div class="part">
+                    <label for="border-color">Border color</label>
                     <input type="color" id="border-color" value="#000000" />
                 </div>
 
-                <label for="background-color">Background color</label>
-                <div>
+                <div class="part">
+                    <label for="background-color">Background color</label>
                     <input type="color" id="background-color" value="#FFFFFF" />
                 </div>
 
