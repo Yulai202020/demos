@@ -1,2 +1,2 @@
-add width height
-add css
+2. добавить css
+5. выровненить форму

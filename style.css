@@ -13,7 +13,7 @@ main {
   padding: 2rem;
 }
 
-main > * {
+main {
   margin: 1rem;
 }
 

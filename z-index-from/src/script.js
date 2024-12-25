@@ -34,13 +34,16 @@ function create(e) {
     const bottom = document.getElementById("bottom").value + unit;
     const left = document.getElementById("left").value + unit;
     const right = document.getElementById("right").value + unit;
+    
+    const height = document.getElementById("height").value + unit;
+    const width = document.getElementById("width").value + unit;
     const z_index = document.getElementById("z-index").value;
 
     const background_color = document.getElementById("background-color").value;
     const border_color = document.getElementById("border-color").value;
     const color = document.getElementById("color").value;
 
-    const style = `position: ${position}; ${top !== unit ? `top: ${top}` : ""}; ${bottom !== unit ? `bottom: ${bottom}` : ""}; ${right !== unit ? `right: ${right}` : ""}; ${left !== unit ? `left: ${left}`: ""}; ${z_index !== "" ? `z-index: ${z_index}` : ""}; background-color: ${background_color}; border-color: ${border_color}; color: ${color};`;
+    const style = `position: ${position}; ${top !== unit ? `top: ${top}` : ""}; ${bottom !== unit ? `bottom: ${bottom}` : ""}; ${right !== unit ? `right: ${right}` : ""}; ${left !== unit ? `left: ${left}`: ""}; ${z_index !== "" ? `z-index: ${z_index}` : ""}; ${height !== unit ? `height: ${height}` : ""} ; ${width !== unit ? `width: ${width}` : ""} ; background-color: ${background_color}; border-color: ${border_color}; color: ${color};`;
 
     if (isChanging) {
         Changing.setAttribute("style", style);
@@ -96,6 +99,9 @@ function onClickDiv(event) {
         document.getElementById("left").value = target.style.left;
         document.getElementById("right").value = target.style.right;
         document.getElementById("z-index").value = target.style.zIndex;
+
+        document.getElementById("height").value + target.style.height;
+        document.getElementById("width").value + target.style.width;
 
         document.getElementById("background-color").value = rgbToHex(target.style.backgroundColor);
         document.getElementById("border-color").value = rgbToHex(target.style.borderColor);
