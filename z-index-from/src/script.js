@@ -4,129 +4,133 @@ let Changing;
 // using in js functions
 
 function componentToHex(c) {
-    var hex = c.toString(16);
-    return hex.length == 1 ? "0" + hex : hex;
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
 }
-  
-function rgbToHex(text) {
-    const rgbArray = text.match(/\d+/g);
-    const r = parseInt(rgbArray[0]);
-    const g = parseInt(rgbArray[1]);
-    const b = parseInt(rgbArray[2]);
 
-    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+function rgbToHex(text) {
+  const rgbArray = text.match(/\d+/g);
+  const r = parseInt(rgbArray[0]);
+  const g = parseInt(rgbArray[1]);
+  const b = parseInt(rgbArray[2]);
+
+  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 
 function extractUnit(cssValue) {
-    const match = cssValue.match(/[a-zA-Z%]+/);
-    return match ? match[0] : 'px';
+  const match = cssValue.match(/[a-zA-Z%]+/);
+  return match ? match[0] : "px";
 }
 
 function getNumbers(text) {
-    const match = text.match(/\d+/);
-    return match ? parseInt(match[0]) : "";
+  const match = text.match(/\d+/);
+  return match ? parseInt(match[0]) : "";
 }
 
 function resetForm() {
-    document.getElementById("form").reset();
+  document.getElementById("form").reset();
 }
 
 // using in html functions
 
 function create(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    const unit = document.getElementById("unit").value;
+  const unit = document.getElementById("unit").value;
 
-    const position = document.getElementById("position").value;
-    const top = document.getElementById("top").value + unit;
-    const bottom = document.getElementById("bottom").value + unit;
-    const left = document.getElementById("left").value + unit;
-    const right = document.getElementById("right").value + unit;
-    
-    const height = document.getElementById("height").value + unit;
-    const width = document.getElementById("width").value + unit;
-    const z_index = document.getElementById("z-index").value;
+  const position = document.getElementById("position").value;
+  const top = document.getElementById("top").value + unit;
+  const bottom = document.getElementById("bottom").value + unit;
+  const left = document.getElementById("left").value + unit;
+  const right = document.getElementById("right").value + unit;
 
-    const background_color = document.getElementById("background-color").value;
-    const border_color = document.getElementById("border-color").value;
-    const color = document.getElementById("color").value;
+  const height = document.getElementById("height").value + unit;
+  const width = document.getElementById("width").value + unit;
+  const z_index = document.getElementById("z-index").value;
 
-    const style = `position: ${position}; ${top !== unit ? `top: ${top}` : ""}; ${bottom !== unit ? `bottom: ${bottom}` : ""}; ${right !== unit ? `right: ${right}` : ""}; ${left !== unit ? `left: ${left}`: ""}; ${z_index !== "" ? `z-index: ${z_index}` : ""}; ${height !== unit ? `height: ${height}` : ""} ; ${width !== unit ? `width: ${width}` : ""} ; background-color: ${background_color}; border-color: ${border_color}; color: ${color};`;
+  const background_color = document.getElementById("background-color").value;
+  const border_color = document.getElementById("border-color").value;
+  const color = document.getElementById("color").value;
 
-    if (isChanging) {
-        Changing.setAttribute("style", style);
+  const style = `position: ${position}; ${top !== unit ? `top: ${top}` : ""}; ${bottom !== unit ? `bottom: ${bottom}` : ""}; ${right !== unit ? `right: ${right}` : ""}; ${left !== unit ? `left: ${left}` : ""}; ${z_index !== "" ? `z-index: ${z_index}` : ""}; ${height !== unit ? `height: ${height}` : ""} ; ${width !== unit ? `width: ${width}` : ""} ; background-color: ${background_color}; border-color: ${border_color}; color: ${color};`;
 
-        const type = document.getElementById("type");
-        type.textContent = "Creation";
+  if (isChanging) {
+    Changing.setAttribute("style", style);
 
-        isChanging = false;
-        Changing = null;
-    } else {
-        // get elements
-        const container = document.getElementById("container");
+    const type = document.getElementById("type");
+    type.textContent = "Creation";
 
-        // create div
-        const div = document.createElement("div");
-        div.classList.add("child");
+    isChanging = false;
+    Changing = null;
+  } else {
+    // get elements
+    const container = document.getElementById("container");
 
-        div.setAttribute("style", style);
-        div.setAttribute("contenteditable", "true");
+    // create div
+    const div = document.createElement("div");
+    div.classList.add("child");
 
-        div.addEventListener('click', onClickDiv);
+    div.setAttribute("style", style);
+    div.setAttribute("contenteditable", "true");
 
-        // append
-        container.appendChild(div);
-    }
+    div.addEventListener("click", onClickDiv);
 
-    dialogClose();
+    // append
+    container.appendChild(div);
+  }
+
+  dialogClose();
 }
 
 function dialogOpen() {
-    document.getElementById("form-dialog").showModal();
+  document.getElementById("form-dialog").showModal();
 }
 
 function dialogClose() {
-    document.getElementById("form-dialog").close();
-    resetForm();
+  document.getElementById("form-dialog").close();
+  resetForm();
 }
 
 function onClickDiv(event) {
-    const target = event.target;
+  const target = event.target;
 
-    if (event.shiftKey) {
-        target.remove();
-    } else if (event.ctrlKey) {
-        const type = document.getElementById("type");
-        type.textContent = "Edit";
-        
-        document.getElementById("position").value = target.style.position;
-        document.getElementById("top").value = getNumbers(target.style.top);
-        document.getElementById("bottom").value = getNumbers(target.style.bottom);
-        document.getElementById("left").value = getNumbers(target.style.left);
-        document.getElementById("right").value = getNumbers(target.style.right);
-        document.getElementById("z-index").value = target.style.zIndex;
+  if (event.shiftKey) {
+    target.remove();
+  } else if (event.ctrlKey) {
+    const type = document.getElementById("type");
+    type.textContent = "Edit";
 
-        document.getElementById("height").value = getNumbers(target.style.height);
-        document.getElementById("width").value = getNumbers(target.style.width);
+    document.getElementById("position").value = target.style.position;
+    document.getElementById("top").value = getNumbers(target.style.top);
+    document.getElementById("bottom").value = getNumbers(target.style.bottom);
+    document.getElementById("left").value = getNumbers(target.style.left);
+    document.getElementById("right").value = getNumbers(target.style.right);
+    document.getElementById("z-index").value = target.style.zIndex;
 
-        document.getElementById("background-color").value = rgbToHex(target.style.backgroundColor);
-        document.getElementById("border-color").value = rgbToHex(target.style.borderColor);
-        document.getElementById("color").value = rgbToHex(target.style.color);
+    document.getElementById("height").value = getNumbers(target.style.height);
+    document.getElementById("width").value = getNumbers(target.style.width);
 
-        const top = target.style.top;
-        
-        document.getElementById("unit").value = extractUnit(top);
-        
-        Changing = target;
-        isChanging = true;
+    document.getElementById("background-color").value = rgbToHex(
+      target.style.backgroundColor,
+    );
+    document.getElementById("border-color").value = rgbToHex(
+      target.style.borderColor,
+    );
+    document.getElementById("color").value = rgbToHex(target.style.color);
 
-        dialogOpen();
-    }
+    const top = target.style.top;
+
+    document.getElementById("unit").value = extractUnit(top);
+
+    Changing = target;
+    isChanging = true;
+
+    dialogOpen();
+  }
 }
 
 document.addEventListener("keydown", (event) => {
-    if (event.shiftKey && event.key === "!") {
-        dialogOpen();
-    }
-})
+  if (event.shiftKey && event.key === "!") {
+    dialogOpen();
+  }
+});
