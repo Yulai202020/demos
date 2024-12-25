@@ -22,6 +22,15 @@ function extractUnit(cssValue) {
     return match ? match[0] : 'px';
 }
 
+function getNumbers(text) {
+    const match = text.match(/\d+/);
+    return match ? parseInt(match[0]) : "";
+}
+
+function resetForm() {
+    document.getElementById("form").reset();
+}
+
 // using in html functions
 
 function create(e) {
@@ -71,8 +80,6 @@ function create(e) {
         container.appendChild(div);
     }
 
-    document.getElementById("form").reset();
-
     dialogClose();
 }
 
@@ -82,6 +89,7 @@ function dialogOpen() {
 
 function dialogClose() {
     document.getElementById("form-dialog").close();
+    resetForm();
 }
 
 function onClickDiv(event) {
@@ -94,14 +102,14 @@ function onClickDiv(event) {
         type.textContent = "Edit";
         
         document.getElementById("position").value = target.style.position;
-        document.getElementById("top").value = target.style.top;
-        document.getElementById("bottom").value = target.style.top;
-        document.getElementById("left").value = target.style.left;
-        document.getElementById("right").value = target.style.right;
+        document.getElementById("top").value = getNumbers(target.style.top);
+        document.getElementById("bottom").value = getNumbers(target.style.bottom);
+        document.getElementById("left").value = getNumbers(target.style.left);
+        document.getElementById("right").value = getNumbers(target.style.right);
         document.getElementById("z-index").value = target.style.zIndex;
 
-        document.getElementById("height").value + target.style.height;
-        document.getElementById("width").value + target.style.width;
+        document.getElementById("height").value = getNumbers(target.style.height);
+        document.getElementById("width").value = getNumbers(target.style.width);
 
         document.getElementById("background-color").value = rgbToHex(target.style.backgroundColor);
         document.getElementById("border-color").value = rgbToHex(target.style.borderColor);
