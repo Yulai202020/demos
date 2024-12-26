@@ -3,70 +3,109 @@ body > * {
     margin: 5px;
 }
 
-.part1 {
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    background: blue;
+/* form */
+
+.form-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    overflow-y: auto;
+    background-color: #fff; /* Background color for the sidebar */
+    border-left: 1px solid #ccc;
 }
 
-#type {
-    /* width: 100%; */
-    color: white;
-    justify-self: center;
-    align-self: center;
-}
-
-/* Container styling */
-.container {
-    padding: 10px;
+.form {
     border: 1px solid black;
-    border-radius: 10px;
-}
-
-/* Child element styling */
-.child {
-    padding: 5px;
-    border: 1px solid black;
-    border-radius: 10px;
-}
-
-.child:hover {
-    border: 1px dashed black;
-}
-
-/* Hiding elements with 'none' class */
-.none {
-    display: none;
-}
-
-/* Form styling */
-#form {
     padding: 10px;
     display: flex;
     flex-direction: column;
+
+    * {
+        margin: 5px;
+    }
+
+    .part {
+        display: flex;
+        justify-content: space-between;
+
+        * {
+            align-self: center;
+        }
+
+        input {
+            margin-left: 10px;
+
+            &:not([type="color"]) {
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            &:not([type="color"]):focus {
+                outline: none;
+                border-color: #007bff;
+            }
+
+            &:has([type="color"]) {
+                width: 50%;
+                padding: 0;
+                -webkit-appearance: none;
+            }
+
+            &:has([type="color"])::-webkit-color-swatch-wrapper {
+                padding: 0;
+                width: 100%;
+            }
+
+            &:has(input[type="color"])::-webkit-color-swatch {
+                border: none;
+            }
+        }
+
+        select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            width: 75%;
+
+            & option {
+                padding: 10px;
+            }
+
+            &:hover {
+                outline: none;
+                border-color: #007bff;
+            }
+        }
+    }
+
+    .title-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        background: blue;
+
+        #type {
+            color: white;
+            justify-self: center;
+            align-self: center;
+        }
+    }
+
+    button.open-button {
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        background-color: blue;
+        color: white;
+    }
 }
 
-#form > * {
-    margin: 5px;
-}
-
-/* Dialog styling */
-dialog {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-dialog::backdrop {
-    position: static;
-    pointer-events: none;
-    backdrop-filter: blur(3px);
-}
-
-/* Close button styling */
-.close-button {
+button.close-button {
     background: none;
     color: red;
     border: none;
@@ -75,70 +114,41 @@ dialog::backdrop {
     right: 15px;
 }
 
-/* Open button styling */
-.open-button {
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    background-color: blue;
-    color: white;
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &::backdrop {
+        position: static;
+        pointer-events: none;
+        backdrop-filter: blur(3px);
+    }
 }
 
-/* Form section styling */
-.part {
-    display: flex;
-    justify-content: space-between;
+/* other */
+
+.content {
+    margin-right: 50%;
+
+    .container {
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 10px;
+
+        .child {
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 10px;
+
+            &:hover {
+                border: 1px dashed black;
+            }
+        }
+    }
 }
 
-.part > * {
-    align-self: center;
-}
-
-.part > input {
-    margin-left: 10px;
-}
-
-/* Input field styling */
-input:not([type="color"]) {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-input:not([type="color"]):focus {
-    outline: none;
-    border-color: #007bff;
-}
-
-input[type="color"] {
-    width: 50%;
-    padding: 0;
-    -webkit-appearance: none;
-}
-
-input[type="color"]::-webkit-color-swatch-wrapper {
-    padding: 0;
-    width: 100%;
-}
-
-input[type="color"]::-webkit-color-swatch {
-    border: none;
-}
-
-/* Select box styling */
-select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-    width: 75%;
-}
-
-select:hover {
-    outline: none;
-    border-color: #007bff;
-}
-
-select > option {
-    padding: 10px;
+.none {
+    display: none;
 }
