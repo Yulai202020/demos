@@ -83,11 +83,11 @@ function create(e) {
 }
 
 function dialogOpen() {
-  document.getElementById("form-dialog").showModal();
+  // document.getElementById("form-dialog").showModal();
 }
 
 function dialogClose() {
-  document.getElementById("form-dialog").close();
+  // document.getElementById("form-dialog").close();
   resetForm();
 }
 
