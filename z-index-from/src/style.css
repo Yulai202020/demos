@@ -29,13 +29,15 @@ body > * {
 
     .part {
         width: 100%;
-/* display: flex; */
+
         * {
             align-self: center;
         }
 
         input {
-            width: 70%;
+            align-self: left;
+            width: 300px;
+            display: inline-block;
             
             &:not([type="color"]) {
                 padding: 10px;
@@ -83,7 +85,8 @@ body > * {
         }
 
         label {
-            width: 25%;
+            display: inline-block;
+            width: 100px;
             text-align: right;
         }
     }
